@@ -12,6 +12,7 @@ class MusicLibrary
   end
 
   def search(keyword)
+    fail "keyword must be a string" unless keyword.is_a? String
     @list.select do |track|
       track.matches?(keyword)
     end
